@@ -48,7 +48,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       height: 90vh;
     }
     .appointment-container {
@@ -80,22 +80,6 @@
       width: 80%;
       margin-bottom: 15px;
     }
-    .appointment-list {
-      background-color: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 80%;
-      max-width: 500px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .add-button {
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-    }
   </style>
 </head>
 
@@ -115,11 +99,30 @@
     <!-- Main Content (Middle Tab) -->
     <div class="content flex-grow-1">
       <h3 class="mb-4">
-        <i class="fas fa-user-plus"></i> New User: Appointments
+        <i class="fas fa-user-plus"></i> Appointment #10014-02
       </h3>
-      <div class="appointment-list">
-        <span>Appointment #10014-01 &nbsp;&nbsp; January 1, 2030</span>
-        <span class="add-button" onclick="window.location.href='./newAppointment2.html'">+</span>
+      <div class="appointment-container">
+        <div class="mb-3">
+          <label class="form-label">Date of Appointment</label>
+          <div class="form-control bg-light">
+            <strong>January 1, 2030</strong>
+            <i class="fas fa-calendar-alt ms-2"></i>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Appointment ID</label>
+          <div class="form-control bg-light">
+            <strong>#10014-01</strong>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Report</label>
+          <textarea class="form-control bg-light" rows="5" disabled></textarea>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-outline-secondary">Attach File</button>
+          <button class="btn btn-success" onclick="window.location.href='./appointmentList2.html'" >Save</button>
+        </div>
       </div>
     </div>
 
@@ -130,12 +133,12 @@
           Simon Agbo
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Go back to Home</a></li>
-          <li><a class="dropdown-item" href="#">Set Appointment</a></li>
-          <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+            <li><a class="dropdown-item" href="./home.html">Go back to Home</a></li>
+            <li><a class="dropdown-item" href="./previewAppointment.html">Set Appointment</a></li>
+            <li><a class="dropdown-item text-danger" href="./index.html">Log Out</a></li>
         </ul>
       </div>
-      <button class="btn btn-success btn-xl" onclick="window.location.href='./successTab3.html'">Finish</button>
+      <button class="btn btn-success btn-xl"  onclick="window.location.href='./appointmentList2.html'">Finish</button>
       <button class="btn btn-outline-danger">Clear Choices</button>
     </div>
   </div>

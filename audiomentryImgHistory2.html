@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>New User Appointments</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-
+  <title>New User Imaging History</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
   <style>
     body {
       background-color: #f8f9fa;
@@ -48,16 +49,36 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       height: 90vh;
     }
-    .appointment-container {
-      background-color: white;
-      padding: 30px;
-      border-radius: 15px;
+    .content h3 {
+      text-align: center;
+    }
+    .imaging-container {
+      width: 100%;
+      max-width: 800px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 50px;
+      text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 80%;
-      max-width: 500px;
+    }
+    .imaging-container img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    .comments-box {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      height: 300px;
+      background-color: #e9ecef;
+      border-radius: 5px;
+      text-align: left;
+      font-size: 20px;
     }
     .right-tab {
       width: 200px;
@@ -80,25 +101,8 @@
       width: 80%;
       margin-bottom: 15px;
     }
-    .appointment-list {
-      background-color: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 80%;
-      max-width: 500px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .add-button {
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-    }
   </style>
 </head>
-
 <body>
   <div class="d-flex">
     <!-- Left Sidebar -->
@@ -112,34 +116,46 @@
       </nav>
     </div>
 
-    <!-- Main Content (Middle Tab) -->
+    <!-- Main Content -->
     <div class="content flex-grow-1">
-      <h3 class="mb-4">
-        <i class="fas fa-user-plus"></i> New User: Appointments
+      <h3 class="mb-2">
+        <i class="fas fa-user-plus"></i> Audiometry: Add Imaging History
       </h3>
-      <div class="appointment-list">
-        <span>Appointment #10014-01 &nbsp;&nbsp; January 1, 2030</span>
-        <span class="add-button" onclick="window.location.href='./newAppointment2.html'">+</span>
+      <div class="imaging-container">
+        <img src="./img/xray.png" style="height: 200px; width: 300px;" alt="Imaging" />
+        <div class="comments-box">
+          <strong>Doctor’s Comments</strong><br><br>
+          Pure-tone audiometry reveals a bilateral mild-to-moderate sensorineural hearing loss, predominantly affecting high frequencies. Speech discrimination scores are within normal limits but show slight difficulty in noisy environments. Tympanometry indicates normal middle ear function with Type A tympanograms. Otoacoustic emissions are absent in high frequencies, suggesting outer hair cell dysfunction.
+        </div>
       </div>
     </div>
 
     <!-- Right Tab -->
     <div class="right-tab">
       <div class="dropdown">
-        <button class="dropdown-toggle btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button
+          class="dropdown-toggle btn"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
           Simon Agbo
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Go back to Home</a></li>
-          <li><a class="dropdown-item" href="#">Set Appointment</a></li>
-          <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+            <li><a class="dropdown-item" href="./home.html">Go back to Home</a></li>
+            <li><a class="dropdown-item" href="./newAppointment.html">Set Appointment</a></li>
+            <li><a class="dropdown-item text-danger" href="./index.html">Log Out</a></li>
         </ul>
       </div>
-      <button class="btn btn-success btn-xl" onclick="window.location.href='./successTab3.html'">Finish</button>
+      <button class="btn btn-success btn-xl" onclick="window.location.href='./audiomentryImgHistory3.html'">
+        Save
+      </button>
       <button class="btn btn-outline-danger">Clear Choices</button>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
 </body>
 </html>
