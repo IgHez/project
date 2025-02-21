@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>New User Preview: Visual Data</title>
+  <title>New User Preview: Appointments</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
@@ -58,26 +58,22 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       width: 80%;
       max-width: 800px;
+    }
+    .appointment-list {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      gap: 10px;
     }
-    .visual-data {
+    .appointment {
       display: flex;
-      gap: 20px;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #dee2e6;
     }
-    .visual-data .card {
-      width: 300px;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #f1f1f1;
-      text-align: center;
-    }
-    .visual-data img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
+    .add-appointment {
+      text-align: right;
+      font-size: 24px;
+      cursor: pointer;
     }
     .right-tab {
       width: 200px;
@@ -109,29 +105,30 @@
       <img src="./img/Ellipse 1.jpg" alt="Lagos University Teaching Hospital Logo" />
       <nav class="nav flex-column">
         <a href="./newUser.html" class="nav-link">New User</a>
-        <a href="./recordDatabase.html" class="nav-link">Records</a>
-        <a href="./appointmentDatabase.html" class="nav-link active">Appointments</a>
-        <a href="./index.html" class="nav-link text-danger">Log Out</a>
+                    <a href="./recordDatabase.html" class="nav-link">Records</a>
+                    <a href="./appointmentDatabase.html" class="nav-link active">Appointments</a>
+                    <a href="./index.html" class="nav-link text-danger">Log Out</a>
       </nav>
     </div>
 
     <div class="content flex-grow-1">
       <h3 class="mb-4">
-        <i class="fas fa-user"></i> New User Preview: Visual Data
+        <i class="fas fa-calendar-alt"></i> New User Preview: Appointments
       </h3>
       <div class="data-container">
-        <div class="visual-data">
-          <div class="card" style="cursor: pointer;" onclick="window.location.href='./audiomentryImgHistory3.html'">
-            <img  src="./img/xray.png" alt="Audiometry">
-            <p><strong>AUDIOMETRY</strong></p>
-          </div>
-          <div class="card">
-            <i class="fas fa-image fa-5x"></i>
-            <p><strong>X-RAY SCANS</strong></p>
-          </div>
+        <div class="appointment-list">
+            <div class="add-appointment" onclick="window.location.href='./newAppointment.html'">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="appointment">
+                <span class="text-secondary" onclick="window.location.href='./basicData.html'">No Appointment(s)</span>
+                <!-- <span>January 1, 2030</span> -->
+              </div>
         </div>
+        
       </div>
     </div>
+    <!-- Right Tab -->
     <div class="right-tab">
         <div class="dropdown">
           <button class="dropdown-toggle btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -139,15 +136,16 @@
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="./home.html">Go back to Home</a></li>
-            <li><a class="dropdown-item" href="./newAppointment.html">Set Appointment</a></li>
-            <li><a class="dropdown-item text-danger" href="./index.html">Log Out</a></li>
+                    <li><a class="dropdown-item" href="./newAppointment.html">Set Appointment</a></li>
+                    <li><a class="dropdown-item text-danger" href="./index.html">Log Out</a></li>
           </ul>
         </div>
-        <button class="btn btn-success btn-xl" onclick="window.location.href='./previewAppointment.html'">Save and Continue</button>
+        <button class="btn btn-success btn-xl" onclick="window.location.href='./successTab4.html'">Finish</button>
         <button class="btn btn-outline-danger">Clear Choices</button>
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
