@@ -104,20 +104,15 @@
       <div class="appointment-container">
         <div class="mb-3">
           <label class="form-label">Date of Appointment</label>
-          <div class="form-control bg-light">
-            <strong>January 1, 2030</strong>
-            <i class="fas fa-calendar-alt ms-2"></i>
-          </div>
+          <input type="date" class="form-control" value="2030-01-01"/>
         </div>
         <div class="mb-3">
           <label class="form-label">Appointment ID</label>
-          <div class="form-control bg-light">
-            <strong>#10014-01</strong>
-          </div>
+          <input type="text" class="form-control" value="#10014-02"/>
         </div>
         <div class="mb-3">
           <label class="form-label">Report</label>
-          <textarea class="form-control bg-light" rows="5" disabled></textarea>
+          <textarea class="form-control" rows="5"></textarea>
         </div>
         <div class="d-flex justify-content-between">
           <button class="btn btn-outline-secondary">Attach File</button>
@@ -134,11 +129,11 @@
         </button>
         <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="./home.html">Go back to Home</a></li>
-            <li><a class="dropdown-item" href="./previewAppointment.html">Set Appointment</a></li>
+            <li><a class="dropdown-item" href="./newAppointment.html">Set Appointment</a></li>
             <li><a class="dropdown-item text-danger" href="./index.html">Log Out</a></li>
         </ul>
       </div>
-      <button class="btn btn-success btn-xl"  onclick="window.location.href='./appointmentList2.html'">Finish</button>
+      <button class="btn btn-success btn-xl"  onclick="window.location.href='./appointmentList.html'">Finish</button>
       <button class="btn btn-outline-danger">Clear Choices</button>
     </div>
   </div>

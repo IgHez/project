@@ -4,14 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>New User Imaging History</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
     body {
       background-color: #f8f9fa;
@@ -68,19 +62,20 @@
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .imaging-container i {
-      font-size: 120px;
-      color: #6c757d;
-    }
-    .comments-box {
-      margin-top: 20px;
-      padding: 20px;
+    .image-preview {
       width: 100%;
-      height: 200px;
-      background-color: #e9ecef;
+      max-height: 300px;
+      margin-bottom: 20px;
+      object-fit: contain;
+      /* display: none; */
+    }
+    .comments-box textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
       border-radius: 5px;
-      text-align: left;
-      font-size: 18px;
+      border: 1px solid #ced4da;
+      font-size: 16px;
     }
     .right-tab {
       width: 200px;
@@ -124,9 +119,12 @@
         <i class="fas fa-user-plus"></i> Audiometry: Add Imaging History
       </h3>
       <div class="imaging-container">
-        <i class="fas fa-image"></i>
+        <i class="fas fa-image fa-5x"></i>  
+        <!-- <img id="imagePreview" class="" alt="Uploaded Image" /> -->
+        <input type="file" id="imageUpload" accept="image/*" class="form-control mb-3" />
         <div class="comments-box">
           <strong>Doctor’s Comments</strong>
+          <textarea id="doctorComments" placeholder="Enter doctor’s comments..."></textarea>
         </div>
       </div>
     </div>
@@ -134,29 +132,32 @@
     <!-- Right Tab -->
     <div class="right-tab">
       <div class="dropdown">
-        <button
-          class="dropdown-toggle btn"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Simon Agbo
-        </button>
+        <button class="dropdown-toggle btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">Simon Agbo</button>
         <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="./home.html">Go back to Home</a></li>
             <li><a class="dropdown-item" href="./newAppointment.html">Set Appointment</a></li>
             <li><a class="dropdown-item text-danger" href="./index.html">Log Out</a></li>
         </ul>
       </div>
-      <button class="btn btn-success btn-xl" onclick="window.location.href='./audiomentryImgHistory2.html'">
-        next
-      </button>
+      <button class="btn btn-success btn-xl" onclick="window.location.href='./audiomentryImgHistory2.html'">Next</button>
       <button class="btn btn-outline-danger">Clear Choices</button>
     </div>
   </div>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  ></script>
+  <script>
+    document.getElementById('imageUpload').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('imagePreview').src = e.target.result;
+          document.getElementById('imagePreview').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
